@@ -1,6 +1,8 @@
 'use strict';
 
 const dic = require('./dictionary')
+const wordsDetail = require('./wordsDetail.json');
+const AWS = require('aws-sdk');
 
 var dataBase = {};
 
@@ -8,9 +10,13 @@ var VERIFY_TOKEN = "my_awesome_token";
 var https = require('https');
 var PAGE_ACCESS_TOKEN = "EAAboQgaMNgcBAJRu6ZCyCPBY3tX5Fql2dqVEwQ8ZBHr5srwZBOBqcW84ZBzPKnRoTBaHZC2dW900czjLqvI8iAQm3xJYyZCrCFdKXnnL7NcTJaO5zJZCZAWSmwmyP4ZBXoFEOoWCM4WRf3RsIeBsvn49mjoMvZCrlqpoYj1CMyd1SnHQZDZD";
 exports.intents = (event, context, callback) => {
-
   console.log("Webhook received event");  
   console.log("event.body: ", event.body);
+
+
+
+
+
 
   // process GET request
   if(event.queryStringParameters){
@@ -39,7 +45,6 @@ exports.intents = (event, context, callback) => {
   // process POST request
   }else{
     var data = JSON.parse(event.body);
-     
     // Make sure this is a page subscription
     if (data.object === 'page') {
     // Iterate over each entry - there may be multiple if batched
@@ -48,13 +53,41 @@ exports.intents = (event, context, callback) => {
         var timeOfEvent = entry.time;
         // Iterate over each messaging event
         entry.messaging.forEach(function(msg) {
-          if (msg.message) {
-            receivedMessage(msg);
+          if (msg.read) {
+            console.log(`
+              유저가 ${msg.read.watermark} 메시지 읽음
+              msg: ${JSON.stringify(msg)}`);
+          } else if (msg.delivery) {
+            console.log(`
+              ${msg.delivery.watermark} 딜리버리 됨
+              msg: ${JSON.stringify(msg)}`);
+          } else if (msg.message) {
+            if (msg.message['is_echo'] === true) {
+              console.log(`
+                ${msg.message.text}에 대한 에코
+                msg: ${JSON.stringify(msg)}`);
+            } else {
+              console.log(`
+                유저가 메시지 보냄
+                유저: ${msg.sender.id}
+                메시지: ${msg.message.text}
+                msg: ${JSON.stringify(msg)}`)
+              if (msg.message.text.indexOf('힌트') !== -1) {
+                quickReply(msg.sender.id, '원하는 힌트를 아래서 골라봐');
+              } else {
+                receivedMessage(msg);
+              }
+            }
           } else if (msg.postback) {
+            console.log(`
+              유저가 답을 선택함
+              유저: ${msg.sender.id}
+              메시지: ${msg.postback.payload}
+              msg: ${msg}`)
             receivedPayload(msg);
           } else {
-            // console.log("Webhook received unknown event");
-            // console.log("event.body: ", event.body)
+            console.log(`Webhook received unknown event
+              event.body: ${event.body}`);
           }
         });
     });
@@ -107,6 +140,8 @@ function receivedMessage(event) {
 }
 
 function receivedPayload(event) {
+  console.log(`receivedPayload
+    ${JSON.stringify(event)}`);
   var senderID = event.sender.id;
   var recipientID = event.recipient.id;
   var timeOfMessage = event.timestamp;
@@ -121,15 +156,18 @@ function receivedPayload(event) {
       sendTextMessage(senderID);
     }, 500);
   } else { //틀렸으면 틀렸다고 말해주고 잠시 생각해보라 하고 3초 후 답 주고 1초 후 다음 문제
-    sendSimpleTextMessage(senderID, `틀렸어요. 제가 기억해 둘께요. 답은 바로 ${dic[questionWord]}`);
+    sendSimpleTextMessage(senderID, `틀렸어요 ㅜㅜ`);
+    setTimeout(() => {
+      sendSimpleTextMessage(senderID, `${questionWord} : ${dic[questionWord]}`);
+    }, 1000);
     setTimeout(() => {
       sendTextMessage(senderID);
-    }, 1000);
+    }, 3000);
   }
 }
 
 function compliment() {
-  var sentences = ["잘했어요. 짝짝짝! 다음 단어!", "굿!", "굿 잡!", "좋아요.", "잘했어요.", "참 잘했어요", "훌륭해요", "대단해요", "놀랍네요", "혹시 천재?", "님 최고!", "잘한다 잘한다 잘한다!"];
+  var sentences = ["잘했어요. 짝짝짝! 다음 단어!", "굿!", "굿 잡!", "좋아요.", "잘했어요.", "참 잘했어요", "훌륭해요", "대단해요", "놀랍네요", "혹시 천재?", "님 최고!", "잘한다 잘한다 잘한다!", "짱짱맨!", "아이큐가 150?", "그레이트!", "퍼팩트!", "킹왕짱!", "굳뜨!"];
   var randomIndex = Math.floor(Math.random() * sentences.length);
   return sentences[randomIndex];
 }
@@ -147,8 +185,41 @@ function sendSimpleTextMessage(recipientId, messageText) {
   callSendAPI(messageData);
 }
 
-function sendTextMessage(recipientId, messageText) {
+function quickReply(recipientId, messageText) {
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      "text":messageText,
+      "quick_replies":[
+        {
+          "content_type":"text",
+          "title":"예문",
+          "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_RED"
+        },
+        {
+          "content_type":"text",
+          "title":"유의어",
+          "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_GREEN"
+        },
+        {
+          "content_type":"text",
+          "title":"어원",
+          "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_GREEN"
+        },
+        {
+          "content_type":"text",
+          "title":"다른 단어와의 관계",
+          "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_GREEN"
+        }
+      ]
+    }
+  };
+  callSendAPI(messageData);
+}
 
+function sendTextMessage(recipientId, messageText) {
   var messageData = {
     recipient: {
       id: recipientId
@@ -183,7 +254,7 @@ function callSendAPI(messageData) {
  
   req.write(body);
   req.end();
-  console.log('req is over. dataBase: ', dataBase);
+  // console.log('req is over. dataBase: ', dataBase);
 }
 
 function shuffle(array) {
@@ -234,7 +305,7 @@ function messageGenerator() {
       "type":"template",
       "payload":{
         "template_type":"button",
-        "text":words[randomIndexOne] + '의 뜻은 뭘까?',
+        "text":words[randomIndexOne] + '의 뜻은?',
         "buttons":shuffle(buttons)
       }
     }
