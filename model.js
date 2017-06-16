@@ -1,34 +1,57 @@
-// var UserId = {
-//   paid: true,
-//   lastWord: 'boy',
-//   reviewing: [],
-//   reviewCollection: [['girl', '2017-06-12T18:33:23.420Z']],
-//   history: {
-//     'boy': {
-//       right: 1,
-//       wrong: 0,
-//       lastTimeChecked: '2017-06-12T18:33:23.420Z'
-//     },
-//     'girl': {
-//       right: 0,
-//       wrong: 1,
-//       lastTimeChecked: '2017-06-12T18:33:23.420Z'
-//     }
-//   }
-// }
+        var params = {
+          TableName: 'wordBot',
+          Key: {
+            UserId: Number(msg.sender.id)
+          }
+        }
+        docClient.get(params).promise()
+        .then((data) => {
+          console.log('첫번째 프로미스 data', data);
+          if (data.Item && data.Item.userData) {
+            return data;
+          } else {
+            var userData = {
+              study: {
+                index: 0
+              },
+              test: {
+                index: 0
+              }
+            }
+            var params = {
+              TableName:'wordBot',
+              Key:{
+                "UserId": Number(msg.sender.id)
+              },
+              UpdateExpression: "set userData=:a",
+              ExpressionAttributeValues:{
+                  ":a":userData
+              },
+              ReturnValues:"UPDATED_NEW"
+            };
+            console.log("Updating the item...");
+            return docClient.update(params).promise().then((data) => {
+              var params = {
+                TableName: 'wordBot',
+                Key: {
+                  UserId: Number(msg.sender.id)
+                }
+              }
+              return docClient.get(params).promise().then((data) => {
+                return data;
+              })
+            });
+          }
+        })//end of first promist
+        .then((data) => {
+        //두번째 프로미스 시작
+          //console.log('두번째 프로미스 체인 data: ', data);
+          var studyIndex = data.Item.userData.study.index;
+          var testIndex = data.Item.userData.test.index;
 
-// console.log(UserId)
 
-
-
-// history : [
-//   {
-//     word: 'boy',
-//     right: true,
-//     time: 
-
-// }
-
-// ]
-
-console.log(Date.now());
+        })
+        .catch((err) => {
+          console.log("Promise Rejected");
+          console.log(err);
+        })
