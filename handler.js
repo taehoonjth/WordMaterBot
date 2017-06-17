@@ -816,24 +816,6 @@ function callSendAPI(messageData) {
   req.end();
 }
 
-function shuffle(array) {
-  var m = array.length, t, i;
-
-  // While there remain elements to shuffle…
-  while (m) {
-
-    // Pick a remaining element…
-    i = Math.floor(Math.random() * m--);
-
-    // And swap it with the current element.
-    t = array[m];
-    array[m] = array[i];
-    array[i] = t;
-  }
-
-  return array;
-}
-
 function handleQuestionMark(recipientId) {
   sendSimpleTextMessage(recipientId, "너가");
   setTimeout(() => {
@@ -907,6 +889,24 @@ function questionMaker(word, mode, reviewDate) {
     }
   };
   return message;
+}
+
+function shuffle(array) {
+  var m = array.length, t, i;
+
+  // While there remain elements to shuffle…
+  while (m) {
+
+    // Pick a remaining element…
+    i = Math.floor(Math.random() * m--);
+
+    // And swap it with the current element.
+    t = array[m];
+    array[m] = array[i];
+    array[i] = t;
+  }
+
+  return array;
 }
 
 // function questionMaker(word, mode, reviewDate) {
