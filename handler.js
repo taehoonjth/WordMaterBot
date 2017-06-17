@@ -57,7 +57,7 @@ exports.intents = (event, context, callback) => {
         }
         docClient.get(params).promise()
         .then((data) => {
-          console.log('첫번째 프로미스 data', data);
+          // console.log('첫번째 프로미스 data', data);
           if (data.Item && data.Item.userData) {
             return data;
           } else {
@@ -154,22 +154,26 @@ exports.intents = (event, context, callback) => {
                   var reviewCollection = data.Item.review.filter((element) => {
                     return element.date < timeNow;
                   });
-                  sendSimpleTextMessage(msg.sender.id, `지금 복습할게 ${reviewCollection.length}개 있네`);
-                  // setTimeout(() => {
-                  //   quickReply(msg.sender.id, '지금 복습 할래?', '그래', '나중에');
-                  // }, 1000);
-                  setTimeout(() => {
-                    sendSimpleTextMessage(msg.sender.id, `복습 시작한다.`);
-                  }, 1000);
-                  setTimeout(() => {
-                    sendQuestionMessage(msg.sender.id, reviewCollection[0].word, 'review');
-                  }, 2000);
+                  if (reviewCollection.length === 0) {
+                    sendSimpleTextMessage(msg.sender.id, `지금 복습할게 전혀 없네^^`);
+                  } else {
+                    sendSimpleTextMessage(msg.sender.id, `지금 복습할게 ${reviewCollection.length}개 있네`);
+                    // setTimeout(() => {
+                    //   quickReply(msg.sender.id, '지금 복습 할래?', '그래', '나중에');
+                    // }, 1000);
+                    setTimeout(() => {
+                      sendSimpleTextMessage(msg.sender.id, `복습 시작한다.`);
+                    }, 1000);
+                    setTimeout(() => {
+                      sendQuestionMessage(msg.sender.id, reviewCollection[0].word, 'review');
+                    }, 2000);
+                  }
                 });
               } else if (msg.message.text.indexOf('공부') !== -1 || msg.message.text.indexOf('ㄱㅂ') !== -1) {
                 changeMode(msg.sender.id, 'test');
                 sendSimpleTextMessage(msg.sender.id, '자 공부를 시작하자!');
                 setTimeout(() => {
-                  sendQuestionMessage(msg.sender.id, words[testIndex], data.Item.studyMode);
+                  sendQuestionMessage(msg.sender.id, words[testIndex], 'test');
                 }, 1000);
               } else if (msg.message.text.indexOf('진도') !== -1 || msg.message.text.indexOf('ㅈㄷ') !== -1) {
                 var params = {
@@ -205,9 +209,12 @@ exports.intents = (event, context, callback) => {
                     for (var key in arrangedData.wrongWords) {
                       wrongWordsSentence += key + ', ';
                     }
-                    sendSimpleTextMessage(msg.sender.id, `총 1233 단어 중 ${history.length}개 학습했고`);
+                    var reviewCollection = data.Item.review.filter((element) => {
+                      return element.date < timeNow;
+                    });
+                    sendSimpleTextMessage(msg.sender.id, `총 1233 단어 중 ${data.Item.userData.test.currentWordIndex}번째 단어 학습 중이고`);
                     setTimeout(() => {
-                      sendSimpleTextMessage(msg.sender.id, `지금까지 ${arrangedData.rightCnt}번 맞았고 ${arrangedData.wrongCnt}번 틀렸어`);
+                      sendSimpleTextMessage(msg.sender.id, `지금 복습할게 ${reviewCollection.length}개 있네`);
                     }, 2000);
                     setTimeout(() => {
                       sendSimpleTextMessage(msg.sender.id, `수고했어`);
@@ -533,7 +540,7 @@ function receivedPayload(event, Item) {
         sendQuestionMessage(senderID, words[index], Item.studyMode);
       }, 3000);
     }
-  } else if (payload[3] === 'review') {
+  } else if (payload[3] === '     ') {
     //해당 엘리먼트를 리뷰에서 지우고
     var params = {
         TableName:'wordBot',
@@ -559,6 +566,8 @@ function receivedPayload(event, Item) {
         });
         //맞았으면 
         if (dic[questionWord] === answer) {
+          var reviewTime = Date.now() + 1000 * 60 * 10; //1분
+          putReview(senderID, questionWord, true, reviewTime);
           sendSimpleTextMessage(senderID, compliment());
           if (reviewCollection.length === 0) {
             setTimeout(() => {
@@ -899,3 +908,60 @@ function questionMaker(word, mode, reviewDate) {
   };
   return message;
 }
+
+// function questionMaker(word, mode, reviewDate) {
+//   var word = word || "applicant";
+//   var reviewDate = reviewDate || 0;
+//   var randomIndexTwo = Math.floor(Math.random() * words.length);
+//   var randomIndexThree = Math.floor(Math.random() * words.length);
+//   var timeNow = Date.now();
+//   var buttons = [
+//     {
+//       "type": "postback",
+//       "title": dic[word],
+//       "payload": {
+//         word: word,
+//         userAnswer: dic[word],
+//         rightOrWrong: true,
+//         generatedTime: timeNow,
+//         mode: mode,
+//         reviewDate: reviewDate
+//       }
+//     },
+//     {
+//       "type":"postback",
+//       "title":dic[words[randomIndexTwo]],
+//       "payload": {
+//         word: word,
+//         userAnswer: dic[words[randomIndexTwo]],
+//         rightOrWrong: true,
+//         generatedTime: timeNow,
+//         mode: mode,
+//         reviewDate: reviewDate 
+//       }
+//     },
+//     {
+//       "type":"postback",
+//       "title":dic[words[randomIndexThree]],
+//       "payload": {
+//         word: word,
+//         userAnswer: dic[words[randomIndexTwo]],
+//         rightOrWrong: true,
+//         generatedTime: timeNow,
+//         mode: mode,
+//         reviewDate: reviewDate 
+//       }
+//     }
+//   ];
+//   var message = {
+//     "attachment":{
+//       "type":"template",
+//       "payload":{
+//         "template_type":"button",
+//         "text":pick(),
+//         "buttons":shuffle(buttons)
+//       }
+//     }
+//   };
+//   return message;
+// }
