@@ -4,7 +4,6 @@ const words = require('./words.json')
 
 //import function
 const questionMaker = require('./questionMaker')
-const handleQuestionMark = require('./handleQuestionMark')
 const compliment = require('./compliment')
 const sorry = require('./sorry')
 
@@ -104,24 +103,24 @@ exports.intents = (event, context, callback) => {
           var testIndex = data.Item.userData.test.currentWordIndex;
 
           if (msg.read) {
-            console.log(`
-              유저가 ${msg.read.watermark} 메시지 읽음
-              msg: ${JSON.stringify(msg)}`);
+            // console.log(`
+            //   유저가 ${msg.read.watermark} 메시지 읽음
+            //   msg: ${JSON.stringify(msg)}`);
           } else if (msg.delivery) {
-            console.log(`
-              ${msg.delivery.watermark} 딜리버리 됨
-              msg: ${JSON.stringify(msg)}`);
+            // console.log(`
+            //   ${msg.delivery.watermark} 딜리버리 됨
+            //   msg: ${JSON.stringify(msg)}`);
           } else if (msg.message) {
             if (msg.message['is_echo'] === true) {
-              console.log(`
-                ${msg.message.text}에 대한 에코
-                msg: ${JSON.stringify(msg)}`);
+              // console.log(`
+              //   ${msg.message.text}에 대한 에코
+              //   msg: ${JSON.stringify(msg)}`);
             } else {
-              console.log(`
-                유저가 메시지 보냄
-                유저: ${msg.sender.id}
-                메시지: ${msg.message.text}
-                msg: ${JSON.stringify(msg)}`)
+              // console.log(`
+              //   유저가 메시지 보냄
+              //   유저: ${msg.sender.id}
+              //   메시지: ${msg.message.text}
+              //   msg: ${JSON.stringify(msg)}`)
               //따봉 처리
               if (msg.message.sticker_id) {
                 if (msg.message.sticker_id === 369239263222822) {
@@ -334,11 +333,11 @@ exports.intents = (event, context, callback) => {
               }
             }
           } else if (msg.postback) {
-            console.log(`
-              유저가 답을 선택함
-              유저: ${msg.sender.id}
-              메시지: ${msg.postback.payload}
-              msg: ${msg}`)
+            // console.log(`
+            //   유저가 답을 선택함
+            //   유저: ${msg.sender.id}
+            //   메시지: ${msg.postback.payload}
+            //   msg: ${msg}`)
             receivedPayload(msg, data.Item);
           } else {
             console.log(`Webhook received unknown event
@@ -529,8 +528,8 @@ function receivedPayload(event, Item) {
 
     //만약 답이 맞으면 맞았다고 말하고 0.5초 후 다음 문제
     if (rightOrWrong) {
-      console.log('여유시간: ', (questionDate  + 1000 * 6) - now);
-      if (questionDate  + 1000 * 6 < now) {
+      console.log('여유시간: ', (questionDate  + 1000 * 8) - now);
+      if (questionDate  + 1000 * 8 < now) {
         sendSimpleTextMessage(senderID, compliment());
         setTimeout(() => {
           sendSimpleTextMessage(senderID, '근데 좀 늦게 답했으니까 나중에 리뷰 한번 하자');
@@ -744,6 +743,28 @@ function changeMode(recipientId, mode) {
       // console.log("UpdateItem succeeded:", JSON.stringify(data, null, 2));
     }
   });
+}
+
+function handleQuestionMark(recipientId) {
+  sendSimpleTextMessage(recipientId, "너가");
+  setTimeout(() => {
+    sendSimpleTextMessage(recipientId, "'공부'라고 하면 단어 공부를 시작해");
+  }, 1000);
+  setTimeout(() => {
+    sendSimpleTextMessage(recipientId, "'힌트'라고 하면 마지막 문제에 대한 힌트를 줘");
+  }, 2000);
+  setTimeout(() => {
+    sendSimpleTextMessage(recipientId, "'복습'이라고 하면 지금까지 틀린 단어들 복습을 시작해");
+  }, 3000);
+  setTimeout(() => {
+    sendSimpleTextMessage(recipientId, "'진도'라고 하면 현재 상황을 보여줘");
+  }, 4000);
+  setTimeout(() => {
+    sendSimpleTextMessage(recipientId, "'추가기능'이라고 하면 또 다른 기능들을 알려줄께");
+  }, 5000);
+  setTimeout(() => {
+    sendSimpleTextMessage(recipientId, "아참, 난 초성으로만 써도 알아들어^^");
+  }, 6000);
 }
 
 function sendSimpleTextMessage(recipientId, messageText) {
