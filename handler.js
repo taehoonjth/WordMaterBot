@@ -1,39 +1,41 @@
 'use strict';
 
-const dic = require('./dictionary')
-var words = ["applicant","apprehensive","aptitude","associate","bilingual","broad","candidate","certification","commensurate","confidence","consultant","degree","eligible","employment","entitle","get through","highly","increment","lag","managerial","match","meet","minimum","occupation","opening","otherwise","paycheck","payroll","pension","probationary","professional","proficiency","prospective","qualified","recruit","reference","regardless of","requirement","resume","wage","abolish","access","accordance","according to","accuse","adhere","approval","at all time","attire","attorney","authorize","circumscribe","code","comply","concern","custody","effect","enforce","exception","form","fraud","habit","immediately","infringement","legislation","legitimate","litigation","observance","petition","policy","procedure","prohibit","prosecute","refrain","regulation","restrict","severely","standard","thoroughly","violate","accustomed","acquaint","affiliate","attendance","check","colleague","concentrate","condense","conglomerate","convey","corporation","delegate","demanding","directly","division","efficiently","electronically","extension","follow up on","impending","in one's absence","in writing","instruct","involved","manage","memorandum","notify","on one's own","oversee","proprietor","quarterly","release","remind","request","revision","submit","subordinate","subsidiary","supervision","translation","accomplish","adjust","agree","aspiration","assign","assist","assume","combined","conduct","confidential","contrary","coordinate","count on","creditable","direct","disturbing","draw on","duplicate","eminent","endeavor","engage","execute","foster","friction","get along with","hardly","insubordinate","intention","lax","malign","neutrality","occasionally","personnel","procrastinate","respectful","respective","responsible","routinely","subsequent","transform","undertake","voluntarily","widely","accessible","accidentally","advisable","aggravate","announcement","apparently","aspect","aware","compliance","concerned","contingency","demonstrate","divide","embrace","evacuate","expertise","extended","face","failure","feedback","follow","implement","inform","instead of","interruption","make sure","matter","outstanding","privilege","promptly","realistically","remainder","rush","sign out","sophisticated","speak","take on","timely","trigger","violation","abate","adversity","ailing","assert","boost","brisk","collapse","commerce","consequence","depression","deteriorate","dramatically","dwindle","economical","entail","fairly","fall","flourish","impede","implication","indicator","industrial","lead","likely","overall","promising","prospect","prosperity","rapidly","ratio","remain","skyrocket","slowdown","soar","stagnant","supplement","thrive","unstable","volatile","wane","admission","advocate","alumni","anonymous","appear","beneficial","care of","celebrity","censorship","collection","come in +서수","contestant","contributor","current","defy","donation","edition","enlightening","enthusiastically","exhibition","fascinating","have yet to do","improvise","informative","issue","lend","live","local","matinee","memoirs","municipal","must-see","note","out of print","periodical","popular","present","publication","showing","subscription","transferable","upcoming","variety","affect","analysis","claim","closely","comparison","competition","consecutive","consistently","consolidate","contend","demand","do one's utmost","effective","especially","examine","expand","expectation","extremely","focus","gap","gauge","impact","intervention","jeopardize","modestly","momentum","monopoly","mounting","perception","persistent","probable","raise","randomly","reflective","respondent","seasonal","segment","survey","tool","adopt","advantage","advertisement","advise","aggressively","aim","attract","await","cater","confront","consumer","creative","customer","deliberate","diversify","effort","endorse","experiment","favorably","feasible","fortify","forward","incentive","indicate","influence","instantly","introduce","largely","less","majority","marginal","mastermind","means","necessarily","need","repeatedly","strategy","affordable","alter","apparel","apply","area","auction","authentic","benefit","carefully","charge","delivery","description","dilute","equivalent","exactly","exclusively","exquisite","fit","installment","lately","merchandise","method","notice","offer","officially","price","purchase","readily","receipt","redeemable","refund","relatively","scent","sturdy","tax","thrifty","valid","value","voucher","warranty","assemble","attribute","automate","capable","capacity","carelessly","chemical","coming","comparable","damaged","device","discontinue","efficiency","equipment","evidently","fabricate","facility","fill","finished","halt","launch","material","operate","operational","place","power","precaution","prevent","processing","procurement","produce","properly","protective","quota","safety","separately","specification","stage","tolerance","utilize","absolute","accurate","advance","allow","appearance","bewildering","broaden","compatible","complement","concurrently","control","corrosion","development","devise","disruption","durable","envision","feature","following","grant","hold","improve","increasingly","indication","innovative","inspect","inspiration","interpretation","manufacturer","obsolete","patent","patronize","quality","reliable","research","revolutionary","sleek","state-of-the-art","streamline","sufficiently","superior","technical","vulnerable","apologize","appropriately","argumentative","blemish","cause","commitment","complaint","complete","compliment","confident","courteous","critical","deal","defective","disclose","escort","evaluation","fix","for free","further","genuine","guarantee","hesitate","inconvenience","infuriate","inquire","insert","mistakenly","notification","politely","rebate","replace","respond","return","satisfaction","seriously","specific","unwavering","accumulate","allowance","approximately","attraction","away","baggage","beforehand","board","brochure","customs","declare","depart","destination","diverse","dramatic","duty","embassy","emergency","exotic","fill out/in","hospitality","indulge","international","itinerary","jet lag","laundry","locate","missing","overhead","precisely","prior to","proximity","remittance","round trip","seating","superb","swap","touch down","tour","unavailable","unique","unlimited","agreement","alliance","annotated","annulment","arbitration","bid","challenging","collaborate","compromise","contract","cooperatively","deadlock","dispute","embark","expire","foundation","impartially","imperative","impression","initially","mediation","moderator","modify","narrow","negotiation","opposing","originally","preamble","proceed","proposal","provision","renew","review","rigid","settle","solicit","stipulation","surely","term","terminate","acclaim","antitrust","assure","at the latest","attain","bulk","capitalize on","commodity","completely","confirmation","consignment","contact","cultivation","dealer","depot","diminish","distribute","diversified","do business with","encompass","engrave","enviable","inevitable","inventory","invoice","keep track of","order","provide","quote","refuse","represent","retail","satisfactory","selection","short","shortly","stock","subject","supply","temporarily","unable","accelerate","acknowledge","address","adequately","affix","attach","bilateral","by hand","carton","caution","convenience","correspondence","courier","deliver","detach","efficient","embargo","enact","enclose","ensure","envelope","expedite","fragile","handle","impose","inaugurate","incorrect","oblige","particularly","perishable","postage","recipient","reciprocal","remarkable","retaliation","shipment","step","surplus","accommodate","agreeably","ahead","amenity","assorted","atmosphere","available","belongings","check in","chef","choice","compensate","complication","complimentary","confirm","connoisseur","container","conveniently","cuisine","dignitary","elegant","entirely","extensive","flavor","forfeit","freshness","indigenous","make","occupancy","polish","rate","reception","recipe","reservation","retain","stir","taste","utensil","anticipate","decline","decrease","demoralize","depend","deviate","disappointing","encouraging","exceed","factor","figure","growth","illustrate","impressive","inaccurate","increase","incur","indicative","infusion","make up for","markedly","meagerly","minimally","offset","percentage","production","profit","projection","proportion","recent","reduce","regular","representative","revenue","sale","significantly","slightly","substantial","summarize","tend","unusually","accountant","accurately","allocate","amend","audit","barely","budget","calculate","committee","compare","curtail","deduct","deficient","deficit","discrepancy","excess","exempt","expenditure","financial","fiscal","fund","generate","in the red","incidental","inconsistency","inflation","ledger","liability","liable","monetary","outlay","overcome","preferred","recently","reimburse","rigorously","spend","stringently","substantially","total","turnover","worth","accept","acquire","active","allegedly","announce","asset","authority","clout","considerable","contingent","contribute","dedicated","emerge","enhance","establish","established","expansion","force","foresee","go through","independent","informed","initiate","interested","liquidate","merge","premier","productivity","progressive","relocate","reveal","run","simultaneously","stance","strategic","strike","struggle","subsidize","surpass","takeover","uncertain","waive","aid","chance","clear","conserve","contaminate","continually","damage","deciduous","deplete","disaster","discharge","dispose","drought","ecology","emission","endangered","environmental","extinction","flood","forecast","fumes","habitat","ideal","inclement","inflict","meteorological","migration","mining","occur","organization","pollutant","precipitation","prominent","purify","recycling","resource","sewage","shower","solution","southern","vague","waste","account","accrue","amount","balance","belatedly","bill","bounce","cash","collateral","confiscate","convert","counterfeit","curb","delinquent","deposit","deterrent","document","due","expect","heavily","identification","in common","interest","investigation","loan","lower","mortgage","overdue","owe","owing to","payable","personal","previously","regrettably","relation","scrutinize","statement","study","sustain","transaction","turn down","unexpected","withdrawal","bond","cautiously","confusion","consider","controversy","depreciation","devastate","dividend","entrepreneur","eventually","foreseeable","increasing","inherently","innate","insecure","investor","justify","legacy","lucrative","manipulation","nearly","on behalf of","out look","outweigh","pitfall","plummet","portfolio","possible","prevalent","property","rapid","shareholder","solely","somewhat","speculation","stability","unbiased","unprecedented","unwillingness","yield","alleviate","alternative","average","bear","cite","clearly","commute","conform","congestion","designated","detailed","detour","divert","emphatic","equip","expense","fare","fine","fuel","gratuity","malfunction","motivate","normal","obstruct","obtain","official","opportunity","opposite","opposition","permit","principal","prominently","reserved","reverse","securely","simply","thereafter","tow","transportation","vehicle","abbreviate","adjourn","agenda","attention","brief","coherent","comment","confine","consensus","constraint","constructive","convene","convince","coordination","defer","differ","discuss","disperse","distract","easy","elaborate","emphasis","faction","give","hold back","illegible","irrelevant","judge","mention","object","opponent","organize","persuasive","preside","press","presumably","refute","succinct","suggestion","unanimous","understanding","uphold","usually","annual","arise","attend","attendee","chronological","commence","conference","conjunction","customize","discriminate","earn","enroll","entry","exhibitor","existing","exploit","function","give in","honor","host","include","labor","leave","lecture","morale","objective","participant","purpose","refer","regard","registration","reimbursement","require","respectfully","responsibility","result","schedule","tentative","union","unused","above all","appoint","appraisal","appreciation","award","characteristic","congratulate","cordially","dedication","delicate","early","encouragement","evaluate","exceptional","incompetent","lay off","level","nomination","participation","performance","praise","predecessor","predict","progress","promote","put in for","radically","reorganize","resignation","reward","search","serve","skilled","stand in for","strictly","transfer","undoubtedly","adjacent","annex","arrange","community","complex","compulsory","consist","construction","currently","delay","demolish","densely","describe","desirable","district","drape","finally","furnished","install","insulation","interfere","location","maintain","numerous","overprice","permanent","premises","presently","renewal","renovation","repair","residence","restore","spacious","structure","tenant","unoccupied","urban","utility","antibiotic","asthma","checkup","chronic","combination","comprehensive","conscious","coverage","deprivation","deter","diagnosis","dose","duration","eliminate","eradicate","exposure","fatigue","forbid","health","immune","induce","inhalation","insurance","join","medicinal","nutrition","periodically","pharmaceutical","physician","premium","prescribe","prevention","prolonged","reaction","recommend","recovery","relieve","remedy","robust","susceptible","symptom"];
+const words = require('./words.json')
+
+//import function
+const questionMaker = require('./questionMaker')
+const handleQuestionMark = require('./handleQuestionMark')
+const compliment = require('./compliment')
+const sorry = require('./sorry')
 
 const wordsDetail = require('./wordsDetail.json');
 const AWS = require('aws-sdk');
 const docClient = new AWS.DynamoDB.DocumentClient({region: 'us-east-1'});
 
-var VERIFY_TOKEN = "my_awesome_token";
-var https = require('https');
-var PAGE_ACCESS_TOKEN = "EAAboQgaMNgcBAJRu6ZCyCPBY3tX5Fql2dqVEwQ8ZBHr5srwZBOBqcW84ZBzPKnRoTBaHZC2dW900czjLqvI8iAQm3xJYyZCrCFdKXnnL7NcTJaO5zJZCZAWSmwmyP4ZBXoFEOoWCM4WRf3RsIeBsvn49mjoMvZCrlqpoYj1CMyd1SnHQZDZD";
+const VERIFY_TOKEN = "my_awesome_token";
+const https = require('https');
+const PAGE_ACCESS_TOKEN = "EAAboQgaMNgcBAJRu6ZCyCPBY3tX5Fql2dqVEwQ8ZBHr5srwZBOBqcW84ZBzPKnRoTBaHZC2dW900czjLqvI8iAQm3xJYyZCrCFdKXnnL7NcTJaO5zJZCZAWSmwmyP4ZBXoFEOoWCM4WRf3RsIeBsvn49mjoMvZCrlqpoYj1CMyd1SnHQZDZD";
+
 exports.intents = (event, context, callback) => {
+  var functionStart = Date.now();
   console.log("Webhook received event");  
   console.log("event.body: ", event.body);
   // process GET request
   if(event.queryStringParameters){
     var queryParams = event.queryStringParameters;
- 
     var rVerifyToken = queryParams['hub.verify_token']
- 
     if (rVerifyToken === VERIFY_TOKEN) {
       var challenge = queryParams['hub.challenge']
-      
       var response = {
         'body': parseInt(challenge),
         'statusCode': 200
       };
-      
       callback(null, response);
     }else{
       var response = {
         'body': 'Error, wrong validation token',
         'statusCode': 422
       };
-      
       callback(null, response);
     }
   
@@ -95,6 +97,7 @@ exports.intents = (event, context, callback) => {
           }
         })//end of first promist
         .then((data) => {
+          console.log(`두번째 프로미스 시작 까지 ${Date.now() - functionStart} 걸림`);
         //두번째 프로미스 시작
           //console.log('두번째 프로미스 체인 data: ', data);
           var studyIndex = data.Item.userData.study.currentWordIndex;
@@ -474,14 +477,18 @@ function receivedPayload(event, Item) {
   var senderID = event.sender.id;
   var recipientID = event.recipient.id;
   var timeOfMessage = event.timestamp;
-  var payload = event.postback.payload.split('|');
-  var questionWord = payload[0];
-  var answer = payload[1];
-  var questionDate = payload[2];
-  var questionMode = payload[3];
-  var reviewDate = payload[4];
+  var payload = JSON.parse(event.postback.payload);
+  var questionWord = payload.word;
+  var korean = payload.korean;
+  var userAnswer = payload.userAnswer;
+  var rightOrWrong = payload.rightOrWrong;
+  var questionDate = payload.generatedTime;
+  var questionMode = payload.mode;
+  var reviewDate = payload.reviewDate;
+  var now = Date.now();
+  console.log('typeof event.postback.payload', typeof event.postback.payload);
 
-  if (payload[3] === 'test') {
+  if (questionMode === 'test') {
     if (Item.studyMode === 'test') {
       var params = {
           TableName:'wordBot',
@@ -521,26 +528,39 @@ function receivedPayload(event, Item) {
     console.log('질문을 위한 index: ', index);
 
     //만약 답이 맞으면 맞았다고 말하고 0.5초 후 다음 문제
-    if (dic[questionWord] === answer) {
-      sendSimpleTextMessage(senderID, compliment());
-      updateHistory(senderID, questionWord, true);
-      setTimeout(() => {
-        sendQuestionMessage(senderID, words[index], Item.studyMode);
-      }, 1000);
+    if (rightOrWrong) {
+      console.log('여유시간: ', (questionDate  + 1000 * 6) - now);
+      if (questionDate  + 1000 * 6 < now) {
+        sendSimpleTextMessage(senderID, compliment());
+        setTimeout(() => {
+          sendSimpleTextMessage(senderID, '근데 좀 늦게 답했으니까 나중에 리뷰 한번 하자');
+        }, 1500)
+        updateHistory(senderID, questionWord, true);
+        var reviewTime = Date.now() + 1000 * 60 * 1; //1분
+        putReview(senderID, questionWord, false, reviewTime);
+        setTimeout(() => {
+          sendQuestionMessage(senderID, words[index], questionMode);
+        }, 3000);
+      } else {
+        sendSimpleTextMessage(senderID, compliment());
+        updateHistory(senderID, questionWord, true);
+        setTimeout(() => {
+          sendQuestionMessage(senderID, words[index], questionMode);
+        }, 1000);
+      }
     } else { //틀렸으면 틀렸다고 말해주고 잠시 생각해보라 하고 3초 후 답 주고 1초 후 다음 문제
-
       sendSimpleTextMessage(senderID, sorry());
       updateHistory(senderID, questionWord, false);
       var reviewTime = Date.now() + 1000 * 60 * 1; //1분
       putReview(senderID, questionWord, false, reviewTime);
       setTimeout(() => {
-        sendSimpleTextMessage(senderID, `${questionWord} : ${dic[questionWord]}`);
+        sendSimpleTextMessage(senderID, `${questionWord} : ${korean}`);
       }, 1000);
       setTimeout(() => {
-        sendQuestionMessage(senderID, words[index], Item.studyMode);
+        sendQuestionMessage(senderID, words[index], questionMode);
       }, 3000);
     }
-  } else if (payload[3] === '     ') {
+  } else if (questionMode === 'review') {
     //해당 엘리먼트를 리뷰에서 지우고
     var params = {
         TableName:'wordBot',
@@ -565,30 +585,55 @@ function receivedPayload(event, Item) {
           return element.date < timeNow;
         });
         //맞았으면 
-        if (dic[questionWord] === answer) {
-          var reviewTime = Date.now() + 1000 * 60 * 10; //1분
-          putReview(senderID, questionWord, true, reviewTime);
-          sendSimpleTextMessage(senderID, compliment());
-          if (reviewCollection.length === 0) {
+        if (rightOrWrong) {
+          if (questionDate  + 1000 * 10 < now) {
+            var reviewTime = Date.now() + 1000 * 60 * 60 * 24; //1일
+            putReview(senderID, questionWord, true, reviewTime);
+            sendSimpleTextMessage(senderID, compliment());
             setTimeout(() => {
-              sendSimpleTextMessage(senderID, `복습 끝! 축하축하!`);
-            }, 1000);
+              sendSimpleTextMessage(senderID, '근데 좀 늦게 답했으니까 나중에 또 리뷰 하자');
+            }, 1500)
+            if (reviewCollection.length === 0) {
+              setTimeout(() => {
+                sendSimpleTextMessage(senderID, `복습 끝! 축하축하!`);
+              }, 3000);
+            } else {
+              setTimeout(() => {
+                sendSimpleTextMessage(senderID, `다음꺼 간다`);
+              }, 2500);
+              console.log('리뷰 페이로드에서: data.Item', data.Item);
+              setTimeout(() => {
+                sendQuestionMessage(senderID, reviewCollection[0].word, 'review');
+              }, 3000);
+            }
           } else {
-            setTimeout(() => {
-              sendSimpleTextMessage(senderID, `다음꺼 간다`);
-            }, 1000);
-            console.log('리뷰 페이로드에서: data.Item', data.Item);
-            setTimeout(() => {
-              sendQuestionMessage(senderID, reviewCollection[0].word, 'review');
-            }, 2000);
+            var reviewTime = Date.now() + 1000 * 60 * 60 * 24 * 5; //5일
+            putReview(senderID, questionWord, true, reviewTime);
+            sendSimpleTextMessage(senderID, compliment());
+            if (reviewCollection.length === 0) {
+              setTimeout(() => {
+                sendSimpleTextMessage(senderID, `복습 끝! 축하축하!`);
+              }, 1000);
+            } else {
+              setTimeout(() => {
+                sendSimpleTextMessage(senderID, `다음꺼 간다`);
+              }, 1000);
+              console.log('리뷰 페이로드에서: data.Item', data.Item);
+              setTimeout(() => {
+                sendQuestionMessage(senderID, reviewCollection[0].word, 'review');
+              }, 2000);
+            }
           }
         //틀렸으면
         } else {
-          sendSimpleTextMessage(senderID, '또 틀렸네');
+          sendSimpleTextMessage(senderID, '또 틀렸네. 괜찮아.');
+          setTimeout(() => {
+            sendSimpleTextMessage(senderID, `계속 반복 하면 돼`);
+          }, 500);
           // updateHistory(senderID, questionWord, false);
           var reviewTime = Date.now() + 1000 * 60 * 1; //1분
           setTimeout(() => {
-            sendSimpleTextMessage(senderID, `${questionWord} : ${dic[questionWord]}`);
+            sendSimpleTextMessage(senderID, `${questionWord} : ${korean}`);
           }, 1000);
           if (reviewCollection.length === 0) {
             setTimeout(() => {
@@ -701,24 +746,6 @@ function changeMode(recipientId, mode) {
   });
 }
 
-function compliment() {
-  var sentences = ["잘했어요. 짝짝짝! 다음 단어!", "굿!", "굿 잡!", "좋아요.", "잘했어요.", "참 잘했어요", "훌륭해요", "대단해요", "놀랍네요", "혹시 천재?", "님 최고!", "잘한다 잘한다 잘한다!", "짱짱맨!", "아이큐가 150?", "그레이트!", "퍼팩트!", "킹왕짱!", "굳뜨!"];
-  var randomIndex = Math.floor(Math.random() * sentences.length);
-  return sentences[randomIndex];
-}
-
-function sorry() {
-  var sentences = ['틀렸어요 ㅜㅜ', '틀렸네ㅜㅜ', '아닌데...', '틀릴 수도 있지. 안그래?', '틀렸다. 기억하자!', '앗 틀렸다!'];
-  var randomIndex = Math.floor(Math.random() * sentences.length);
-  return sentences[randomIndex];
-}
-
-function pick() {
-  var sentences = ['골라!', '다음 중 뭘까?', '빨리 골라!', '찍지 말고 골라!', '모르겠으면 힌트 외쳐!', '답은?'];
-  var randomIndex = Math.floor(Math.random() * sentences.length);
-  return sentences[randomIndex];
-}
-
 function sendSimpleTextMessage(recipientId, messageText) {
   var messageData = {
     recipient: {
@@ -783,7 +810,7 @@ function sendQuestionMessage(recipientId, word, mode) {
       // console.log("UpdateItem succeeded:", JSON.stringify(data, null, 2));
     }
   });
-  sendSimpleTextMessage(recipientId, word + "의 뜻은?");
+  sendSimpleTextMessage(recipientId, word + " 뜻은?");
   setTimeout(() => {
     callSendAPI(messageData);
   }, 2000);
@@ -816,27 +843,6 @@ function callSendAPI(messageData) {
   req.end();
 }
 
-function handleQuestionMark(recipientId) {
-  sendSimpleTextMessage(recipientId, "너가");
-  setTimeout(() => {
-    sendSimpleTextMessage(recipientId, "'공부'라고 하면 단어 공부를 시작해");
-  }, 1000);
-  setTimeout(() => {
-    sendSimpleTextMessage(recipientId, "'힌트'라고 하면 마지막 문제에 대한 힌트를 줘");
-  }, 2000);
-  setTimeout(() => {
-    sendSimpleTextMessage(recipientId, "'복습'이라고 하면 지금까지 틀린 단어들 복습을 시작해");
-  }, 3000);
-  setTimeout(() => {
-    sendSimpleTextMessage(recipientId, "'진도'라고 하면 현재 상황을 보여줘");
-  }, 4000);
-  setTimeout(() => {
-    sendSimpleTextMessage(recipientId, "'추가기능'이라고 하면 또 다른 기능들을 알려줄께");
-  }, 5000);
-  setTimeout(() => {
-    sendSimpleTextMessage(recipientId, "아참, 난 초성으로만 써도 알아들어^^");
-  }, 5000);
-}
 
 function handleThumbsUp(recipientId) {
   sendSimpleTextMessage(recipientId, "따봉 고마워");
@@ -855,113 +861,4 @@ function handleBigThumbsUp(recipientId) {
   }, 2000);
 } 
 
-function questionMaker(word, mode, reviewDate) {
-  var word = word || "applicant";
-  var reviewDate = reviewDate || 0;
-  var randomIndexTwo = Math.floor(Math.random() * words.length);
-  var randomIndexThree = Math.floor(Math.random() * words.length);
-  var timeNow = Date.now();
-  var buttons = [
-    {
-      "type":"postback",
-      "title":dic[word],
-      "payload":word + '|' + dic[word] + '|' + timeNow + '|' + mode + '|' + reviewDate
-    },
-    {
-      "type":"postback",
-      "title":dic[words[randomIndexTwo]],
-      "payload":word + '|' + dic[words[randomIndexTwo]] + '|' + timeNow + '|' + mode + '|' + reviewDate
-    },
-    {
-      "type":"postback",
-      "title":dic[words[randomIndexThree]],
-      "payload":word + '|' + dic[words[randomIndexThree]] + '|' + timeNow + '|' + mode + '|' + reviewDate
-    }
-  ];
-  var message = {
-    "attachment":{
-      "type":"template",
-      "payload":{
-        "template_type":"button",
-        "text":pick(),
-        "buttons":shuffle(buttons)
-      }
-    }
-  };
-  return message;
-}
 
-function shuffle(array) {
-  var m = array.length, t, i;
-
-  // While there remain elements to shuffle…
-  while (m) {
-
-    // Pick a remaining element…
-    i = Math.floor(Math.random() * m--);
-
-    // And swap it with the current element.
-    t = array[m];
-    array[m] = array[i];
-    array[i] = t;
-  }
-
-  return array;
-}
-
-// function questionMaker(word, mode, reviewDate) {
-//   var word = word || "applicant";
-//   var reviewDate = reviewDate || 0;
-//   var randomIndexTwo = Math.floor(Math.random() * words.length);
-//   var randomIndexThree = Math.floor(Math.random() * words.length);
-//   var timeNow = Date.now();
-//   var buttons = [
-//     {
-//       "type": "postback",
-//       "title": dic[word],
-//       "payload": {
-//         word: word,
-//         userAnswer: dic[word],
-//         rightOrWrong: true,
-//         generatedTime: timeNow,
-//         mode: mode,
-//         reviewDate: reviewDate
-//       }
-//     },
-//     {
-//       "type":"postback",
-//       "title":dic[words[randomIndexTwo]],
-//       "payload": {
-//         word: word,
-//         userAnswer: dic[words[randomIndexTwo]],
-//         rightOrWrong: true,
-//         generatedTime: timeNow,
-//         mode: mode,
-//         reviewDate: reviewDate 
-//       }
-//     },
-//     {
-//       "type":"postback",
-//       "title":dic[words[randomIndexThree]],
-//       "payload": {
-//         word: word,
-//         userAnswer: dic[words[randomIndexTwo]],
-//         rightOrWrong: true,
-//         generatedTime: timeNow,
-//         mode: mode,
-//         reviewDate: reviewDate 
-//       }
-//     }
-//   ];
-//   var message = {
-//     "attachment":{
-//       "type":"template",
-//       "payload":{
-//         "template_type":"button",
-//         "text":pick(),
-//         "buttons":shuffle(buttons)
-//       }
-//     }
-//   };
-//   return message;
-// }
